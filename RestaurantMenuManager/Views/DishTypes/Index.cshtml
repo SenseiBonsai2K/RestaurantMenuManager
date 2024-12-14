@@ -1,0 +1,39 @@
+﻿@model RestaurantMenuManager.ViewModels.DishTypesIndexViewModel
+
+@{
+    Layout = null;
+}
+
+<html>
+    <body>
+        <form method="get" action="/DishTypes/Index/">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Type</th>
+                        <th>
+                        <a href="/DishTypes/Create">New Dish Type</a>
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+            
+            <tbody>
+                @foreach (var dt in Model.AllDishTypes) {
+                    <tr>
+                        <td>@dt.Id</td>
+                        <td>@dt.Type</td>
+                        <td>
+                            <a href="/DishTypes/Edit?Id=@dt.Id">Edit</a>
+                        </td>
+                        <td>
+                            <a href="/DishTypes/Delete?Id=@dt.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        </form>
+    </body>
+</html>

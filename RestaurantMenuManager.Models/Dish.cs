@@ -6,14 +6,24 @@ using System.Threading.Tasks;
 
 namespace RestaurantMenuManager.Models
 {
-    internal class Dish
+    public class Dish
     {
-        required public int Id  { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
 
-        required public string Name { get; set; }
+        public double Price { get; set; }
+        public string Type { get; set; }
 
-        required public double Price { get; set; }
+        public Dish()
+        {
+        }
 
-        required public DishType Type { get; set; }
+        public Dish(int Id, string Name, double Price, string Type)
+        {
+            this.Id = Id;
+            this.Name = Name;
+            this.Price = Price;
+            this.Type = Type;
+        }
     }
 }

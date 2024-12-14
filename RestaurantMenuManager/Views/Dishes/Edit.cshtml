@@ -1,0 +1,26 @@
+﻿@model RestaurantMenuManager.ViewModels.DishesEditViewModel
+
+@{
+    Layout = null;
+}
+
+<html>
+<body>
+    <form method="post" action="/Dishes/Edit">
+        <input readonly type="number" name="Dishes.Id" value="@Html.Raw(Model.Dish.Id)" placeholder="Id" />
+        <br />
+        <input type="text" name="Dish.Name" value="@Html.Raw(Model.Dish.Name)" placeholder="Name" />
+        <span asp-validation-for="Dish.Name" class="text-danger"></span>
+        <input type="number" step="0.01" name="Dish.Price" value="@Html.Raw(Model.Dish.Price)" placeholder="Price" />
+        <span asp-validation-for="Dish.Price" class="text-danger"></span>
+        <select name="Dish.Type">
+            @foreach (var dt in Model.DishTypesList)
+            {
+                <option value="@dt.Id">@dt.Type</option>
+            }
+        </select>
+        <button type="submit">Edit</button>
+        <br />
+    </form>
+</body>
+</html>

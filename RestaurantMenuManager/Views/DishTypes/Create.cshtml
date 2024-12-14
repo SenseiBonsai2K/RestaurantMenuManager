@@ -1,0 +1,19 @@
+﻿@model RestaurantMenuManager.ViewModels.DishTypesCreateViewModel
+
+@{
+    Layout = null;
+}
+
+<html>
+<body>
+    <form method="post" action="/DishTypes/Create">
+        <input type="number" name="DishType.Id" value="@Model.DishType.Id" placeholder="Id" />
+        <span asp-validation-for="DishType.Id" class="text-danger"></span>
+        <br />
+        <input type="text" name="DishType.Type" value="@Model.DishType.Type" placeholder="Type" />
+        <span asp-validation-for="DishType.Type" class="text-danger"></span>
+        <br />
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>

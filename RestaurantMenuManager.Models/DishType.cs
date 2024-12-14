@@ -2,8 +2,18 @@
 {
     public class DishType
     {
-        required public int Id { get; set; }
-        required public string Type { get; set; }
+        public int Id { get; set; }
+        public string Type { get; set; }
 
+        public DishType()
+        {
+
+        }
+
+        public DishType(int Id, string Type)
+        {
+            this.Id = Id;
+            this.Type = Type;
+        }
     }
 }

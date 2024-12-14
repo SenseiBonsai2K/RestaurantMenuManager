@@ -1,0 +1,18 @@
+﻿@model RestaurantMenuManager.ViewModels.DishTypesEditViewModel
+
+@{
+    Layout = null;
+}
+
+<html>
+    <body>
+    <form method="post" action="/DishTypes/Edit">
+        <input readonly type="number" name="DishType.Id" value="@Html.Raw(Model.DishType.Id)" placeholder="Id"/>
+        <br />
+        <input type="text" name="DishType.Type" value="@Html.Raw(Model.DishType.Type)" placeholder="Type"/>
+        <span asp-validation-for="DishType.Type" class="text-danger"></span>
+        <br />
+        <button type="submit">Edit</button>
+    </form>
+    </body>
+</html>
